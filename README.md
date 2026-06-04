@@ -10,13 +10,16 @@ Filtering and sorting are passed straight to the Vikunja API (server-side), so t
 
 Projects:
 - `list_projects` (includes `parent_project_id`, shows sub-project nesting)
+- `list_project_views` (project_id) — includes view ids, view kinds, and Kanban bucket settings
+- `list_kanban_buckets` (project_id, view_id?) — lists Kanban stages/buckets; auto-detects the Kanban view when omitted
+- `list_kanban` (project_id, view_id?, filter?, page, per_page) — lists Kanban stages with their tasks; defaults to open tasks
 - `create_project` (title, parent_project_id?, description?) — pass `parent_project_id` for a sub-project
 
 Tasks:
 - `list_tasks` (project_id, filter, sort_by, page, per_page)
 - `get_task` (task_id)
-- `create_task` (project_id, title, description?, priority?, due_date?, start_date?, end_date?)
-- `update_task` (task_id, title?, description?, done?, priority?, start_date?, end_date?)
+- `create_task` (project_id, title, description?, priority?, due_date?, start_date?, end_date?, bucket_id?)
+- `update_task` (task_id, title?, description?, done?, priority?, start_date?, end_date?, bucket_id?)
 - `set_reminders` (task_id, reminders) — replaces the task's reminders with the given ISO 8601 datetimes; empty list clears
 
 Labels:
