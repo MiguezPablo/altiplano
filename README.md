@@ -19,7 +19,7 @@ Tasks:
 - `list_tasks` (project_id, filter, sort_by, page, per_page)
 - `get_task` (task_id)
 - `create_task` (project_id, title, description?, priority?, due_date?, start_date?, end_date?, bucket_id?)
-- `update_task` (task_id, title?, description?, done?, priority?, start_date?, end_date?, bucket_id?)
+- `update_task` (task_id, title?, description?, done?, priority?, due_date?, start_date?, end_date?, bucket_id?)
 - `set_reminders` (task_id, reminders) — replaces the task's reminders with the given ISO 8601 datetimes; empty list clears
 
 Labels:

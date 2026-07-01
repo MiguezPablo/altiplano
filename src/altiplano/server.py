@@ -272,12 +272,14 @@ async def update_task(
     priority: int | None = None,
     start_date: str | None = None,
     end_date: str | None = None,
+    due_date: str | None = None,
     bucket_id: int | None = None,
 ) -> dict:
     """Update a task. Only the fields you pass are changed. Use `done` to open/close it.
 
     `start_date` and `end_date` are ISO 8601 datetimes marking the window you
-    plan to work on the task (start work / finish work).
+    plan to work on the task (start work / finish work), distinct from
+    `due_date` (the deadline).
 
     `bucket_id` moves the task to a different Kanban column.
     """
@@ -294,6 +296,8 @@ async def update_task(
         payload["start_date"] = start_date
     if end_date is not None:
         payload["end_date"] = end_date
+    if due_date is not None:
+        payload["due_date"] = due_date
     if bucket_id is not None:
         payload["bucket_id"] = bucket_id
     if not payload:
