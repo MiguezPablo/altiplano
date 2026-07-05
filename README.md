@@ -6,6 +6,16 @@ A small, dependable MCP server for [Vikunja](https://vikunja.io). Named after th
 
 Filtering and sorting are passed straight to the Vikunja API (server-side), so there is no client-side filtering engine and no paginate-then-filter pitfall.
 
+## Fork additions
+
+This fork adds Kanban-aware project tooling on top of upstream Altiplano:
+
+- Project view discovery with `list_project_views`.
+- Kanban bucket listing with `list_kanban_buckets`.
+- Kanban board listing with `list_kanban`, including buckets and their tasks.
+- `bucket_id` support in `create_task` and `update_task` to place or move tasks between Kanban buckets.
+- `due_date` support in `update_task`.
+
 ## Tools
 
 Projects:
